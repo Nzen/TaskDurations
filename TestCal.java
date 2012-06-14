@@ -13,6 +13,7 @@ public class TestCal
 		//shouldParseDates( code );
 		//shouldAdd( code );
 		//testFormatting( );
+		shouldPrint2File( fromFile );
 	}
 
 	static void shouldParseDates( DurCal code )
@@ -22,7 +23,7 @@ public class TestCal
 		try
 		{
 			Task recepticle = code.parse2Date( aDate );
-			System.out.println( recepticle.getNiceDeadline() );
+			System.out.println( recepticle.getNiceDate() );
 		}
 		catch ( ParseException obviouslyFailed )
 		{
@@ -72,6 +73,12 @@ public class TestCal
 		System.out.println( "done banana" );
 	}
 	
+	// checking that it works only, assumes no IO problems like write access
+	static void shouldPrint2File( DurCal toFile )
+	{
+		toFile.export2File();
+	}
+}	
 	
 	
 	
@@ -96,4 +103,4 @@ public class TestCal
 	
 	
 	
-}
+
